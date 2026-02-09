@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.heart {
+  font-size: 90px;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+button {
+  background: #fff;
+  color: #ff4d6d;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Floating hearts */
+.heart-float {
+  position: fixed;
+  bottom: -50px;
+  font-size: 30px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart">❤️</div>
+
+  <h1 id="title"></h1>
+  <h2 id="subtitle"></h2>
+
+  <div class="card">
+    <p style="font-size:1.2rem; line-height:1.8">
+      From the moment you walked into my life, everything changed.<br/>
+      You turned ordinary days into beautiful memories.<br/>
+      You are my peace, my happiness, my forever.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Why I Love You 💖</h2>
+    <p style="line-height:1.8">
+      🌸 You understand me without words<br/>
+      🌸 You support me in every phase of life<br/>
+      🌸 You make our house a home<br/>
+      🌸 You are my best friend and my soulmate<br/>
+      🌸 You are my forever Valentine
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>నా జీవితంలో నువ్వు 💕</h2>
+    <p style="line-height:1.8">
+      నువ్వు నా జీవితం లోకి వచ్చిన రోజు నుంచే,<br/>
+      నా ప్రపంచం మరింత అందంగా మారింది.<br/>
+      ప్రతి రోజు నిన్నే ఎంచుకుంటాను…<br/>
+      ఈ రోజు… రేపు… ఎప్పటికీ ❤️
+    </p>
+  </div>
+
+  <button onclick="showSurprise()">Click for My Promise 💍</button>
+
+  <div id="surprise" class="card hidden">
+    <h2>💌 My Promise to You 💌</h2>
+    <p style="font-size:1.2rem; line-height:1.8">
+      I promise to stand by you in every smile and every storm.<br/>
+      To love you deeper with every passing day.<br/>
+      To choose you — always and forever.
+    </p>
+    <p style="margin-top:20px;font-weight:bold">
+      Forever yours,<br/>
+      <span id="fromName"></span>
+    </p>
+  </div>
+
+  <footer>
+    Made with endless love ❤️
+  </footer>
+</div>
+
+<script>
+const wifeName = "My Love";       // CHANGE THIS
+const husbandName = "Your Husband"; // CHANGE THIS
+
+document.getElementById("title").innerText =
+  "Happy Valentine’s Day, " + wifeName + " ❤️";
+
+document.getElementById("subtitle").innerText =
+  "To the woman who owns my heart 💕";
+
+document.getElementById("fromName").innerText = husbandName;
+
+// Surprise reveal
+function showSurprise() {
+  document.getElementById("surprise").classList.remove("hidden");
+}
+
+// Floating hearts generator
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart-float";
+  heart.innerText = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 6 + Math.random() * 4 + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}, 500);
+</script>
+
+</body>
+</html>
